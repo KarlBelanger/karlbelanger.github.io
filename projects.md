@@ -7,7 +7,12 @@ toc_label: "Project Sections"
 
 
 # Projects
-This is the primary page for all my Linux Administration projects. This page will grow over time, and I will provide links to more details on some of these projects in the near future. For now, here are descriptions of a few of the things I've been working on.
+This is the primary page for all my Linux Administration projects. This page will grow over time as I complete more Linux admin projects.
+## Recovering a dead USB Drive
+I recently had a cheap USB drive which was no longer recognized by Windows or Linux that I had been using for bootable ISOs. Here is how [I recovered the drive](usb_drive_recovery.md)
+
+## Other projects
+Here are descriptions of a few of the things I've been working on.
 ## My experiences installing Debian and Red Hat-based distributions
 In order to familiarize myself with the different varieties of Linux, I have installed and configured a variety of Debian and Red Hat-based distributions including Ubuntu, Kali, Linux Lite, Fedora and CentOS.
 ## Setting up an SSH Bastian
