@@ -13,10 +13,7 @@ First off, here are some of my thoughts on my experiences with Linux accessibili
 ## Projects
 ![Intel NUC from my home lab](<Linux Computer-1.jpeg>)
 
-Over my time learning Linux, I have worked on several projects:
-- Setting up an SSH home bastion so I can access my home lab from anywhere
-- Set up Ansible and Terraform for efficient deployment and configuration
-- configured multiple Debian and Red Hat-based distributions
-You can read more about each of these on my [projects page](projects.md).
+My projects page is where you can find information about all my active and completed Linux projects. These include my home lab architecture, troubleshooting experiences, automation projects, and more. 
+You can read more about each of these on my [projects page](/Projects/projects.md).
 ## Connect With Me
 Please come connect with me on [Linkedin](https://www.linkedin.com/in/karl-belanger-09761b21/).
