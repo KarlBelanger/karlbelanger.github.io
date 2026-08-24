@@ -2,7 +2,7 @@
 title: "Projects"
 layout: single
 toc: true
-toc_label: "Project Sections"
+toc_label: "On this page"
 ---
 
 
