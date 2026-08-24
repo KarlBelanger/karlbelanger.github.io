@@ -9,9 +9,9 @@ toc_label: "Project Sections"
 # Projects
 This is the primary page for all my Linux Administration projects. This page will grow over time as I complete more Linux admin projects.
 ## My home lab architecture
-All my projects are completed on my three Intel NUC home lab. All the details of my chosen setup and networking are on [My Home Lab Architecture.](/Projects/home_lab.md)
+All my projects are completed on my three Intel NUC home lab. All the details of my chosen setup and networking are on [My Home Lab Architecture.](/projects/home-lab.md)
 ## Recovering a dead USB Drive
-I recently had a cheap USB drive which was no longer recognized by Windows or Linux that I had been using for bootable ISOs. Here is how [I recovered the drive](/Projects/usb_drive_recovery.md)
+I recently had a cheap USB drive which was no longer recognized by Windows or Linux that I had been using for bootable ISOs. Here is how [I recovered the drive](/projects/usb_drive_recovery.md)
 
 ## Other projects
 Here are descriptions of a few of the things I've been working on.
