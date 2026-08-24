@@ -21,15 +21,23 @@ Throughout this process, I used the following environments:
 
 ## Troubleshooting Flow Summary
 
-Windows Disk Management → DiskPart reports no read-only flag and “OK” status → clean fails with access denied  
-↓  
-Fedora SilverBlue dd test → raw write to LBA0 succeeds  
-↓  
-GNOME Disks appears to create and format the volume → Windows still sees the same broken 0B volume  
-↓  
-fdisk + mkfs.vfat report success → changes do not persist after reconnecting  
-↓  
-Elevated SilverBlue root shell → partition table and filesystem writes sync correctly → drive is usable again
+Windows Disk Management -> DiskPart reports no read-only flag and "OK" status -> clean fails with access denied
+
+v
+
+Fedora SilverBlue dd test -> raw write to LBA0 succeeds
+
+v
+
+GNOME Disks appears to create and format the volume -> Windows still sees the same broken 0B volume
+
+v
+
+fdisk + mkfs.vfat report success -> changes do not persist after reconnecting
+
+v
+
+Elevated SilverBlue root shell -> partition table and filesystem writes sync correctly -> drive is usable again
 
 -   Windows 11, my primary OS, plus Balena Etcher, Disk Management, and DiskPart through PowerShell.
 -   Fedora SilverBlue, the distro I had installed on the Linux box I used.
@@ -40,15 +48,15 @@ Elevated SilverBlue root shell → partition table and filesystem writes sync co
 
 ### Initial attempts using Windows
 
-I started by using Disk Management to manually create a partition on the disk, attempting to get it back into a usable state. I was able to successfully create a simple volume that used the drive’s entire space, but Windows would not format it. This is when I knew something was wrong at a deeper level than a simple broken partition.
+I started by using Disk Management to manually create a partition on the disk, attempting to get it back into a usable state. I was able to successfully create a simple volume that used the drive's entire space, but Windows would not format it. This is when I knew something was wrong at a deeper level than a simple broken partition.
 
 ### Deeper investigation with DiskPart
 
-Rather than doing extensive Googling, I thought I would see if an AI could help me speed the process along. I explained the symptoms to Microsoft Copilot, along with what I had tried so far. At each step, I described the behavior I was seeing and which commands I had tried, then interpreted Copilot’s responses and decided what to run next. Copilot indicated that my drive issue might be a problem with bad early blocks in the memory chip and suggested using DiskPart via PowerShell. I loaded up DiskPart, selected the disk, and inspected it. The disk showed only one 0B volume, with the rest of the disk listed as unallocated space. It also showed that the Read Only flag was not set, eliminating that issue. I then attempted to wipe the disk with the clean command, but I received an access denied error. After unplugging and reinserting the drive, I still got the error, so DiskPart could not be used to reset the partition table.
+Rather than doing extensive Googling, I thought I would see if an AI could help me speed the process along. I explained the symptoms to Microsoft Copilot, along with what I had tried so far. At each step, I described the behavior I was seeing and which commands I had tried, then interpreted Copilot's responses and decided what to run next. Copilot indicated that my drive issue might be a problem with bad early blocks in the memory chip and suggested using DiskPart via PowerShell. I loaded up DiskPart, selected the disk, and inspected it. The disk showed only one 0B volume, with the rest of the disk listed as unallocated space. It also showed that the Read Only flag was not set, eliminating that issue. I then attempted to wipe the disk with the clean command, but I received an access denied error. After unplugging and reinserting the drive, I still got the error, so DiskPart could not be used to reset the partition table.
 
 ### Further analysis using other PowerShell commands
 
-Once the simple diskpart\>clean command failed, I gathered more information using Get-Disk \| Format-List \* and detail disk and detail volume within DiskPart. Everything came back as healthy. The disk was set up with an MBR, but it showed no partitions and only the one 0B volume I had identified earlier. Finally, I ran “wmic diskdrive get status,model,size” for one last check that the controller was reporting things correctly. This also showed the status as OK and reported the correct size. After confirming all the information listed above, Copilot recommended that I switch to Linux because it could handle the drive better than Windows.
+Once the simple diskpart\>clean command failed, I gathered more information using Get-Disk \| Format-List \* and detail disk and detail volume within DiskPart. Everything came back as healthy. The disk was set up with an MBR, but it showed no partitions and only the one 0B volume I had identified earlier. Finally, I ran "wmic diskdrive get status,model,size" for one last check that the controller was reporting things correctly. This also showed the status as OK and reported the correct size. After confirming all the information listed above, Copilot recommended that I switch to Linux because it could handle the drive better than Windows.
 
 ## Working with Fedora SilverBlue: The Process That Eventually Fixed It
 
@@ -56,9 +64,9 @@ After all the Windows commands went nowhere, I decided to attempt the fix with L
 
 ### First pass with Gnome Disks
 
-I first started by using GNOME’s Disks utility. The volume creation and formatting steps all appeared to work perfectly. The system said the volume was created, the drive was formatted, and everything worked just fine. However, after unplugging the drive and putting it back into my Windows machine, nothing was resolved. Everything looked the same, with the one 0B volume that Windows could not do anything with. After the GNOME Disks failure, I went to the terminal to try things the manual way.
+I first started by using GNOME's Disks utility. The volume creation and formatting steps all appeared to work perfectly. The system said the volume was created, the drive was formatted, and everything worked just fine. However, after unplugging the drive and putting it back into my Windows machine, nothing was resolved. Everything looked the same, with the one 0B volume that Windows could not do anything with. After the GNOME Disks failure, I went to the terminal to try things the manual way.
 
-Looking back, this is where SilverBlue may have complicated the troubleshooting. Because SilverBlue is built around an immutable base system, some changes that look successful in a desktop utility do not always behave the way I would expect from a more traditional Linux install. At this point, I did not know whether the tool had failed, the drive had ignored the write, or SilverBlue’s permissions model was getting in the way, so I moved to the terminal to get more direct control over what was being written.
+Looking back, this is where SilverBlue may have complicated the troubleshooting. Because SilverBlue is built around an immutable base system, some changes that look successful in a desktop utility do not always behave the way I would expect from a more traditional Linux install. At this point, I did not know whether the tool had failed, the drive had ignored the write, or SilverBlue's permissions model was getting in the way, so I moved to the terminal to get more direct control over what was being written.
 
 ### First pass with the command line
 
@@ -72,13 +80,13 @@ Since GNOME Disks did not work, I tried using fdisk and mkfs.vfat. I followed th
 
 After exiting fdisk, I used mkfs.vfat on my disk to format it and get it ready for use. Everything reported success, so I ejected the disk and thought I had succeeded.
 
-### The drive still didn’t work
+### The drive still didn't work
 
 After plugging the drive back into Windows, the 0B volume was still there, and Windows still could not do anything with it. I suspected that the block device had been updated, but nothing had actually been written to the drive. After some extra research, I confirmed that this was likely the case.
 
 ## Evidence from the Troubleshooting Notes
 
-Two observations from the process made the failure pattern clear: “The disk showed only one 0B volume, with the rest of the disk listed as unallocated space,” and “the volume creation and formatting steps all appeared to work perfectly” in GNOME Disks even though Windows still showed the same broken state afterward. Together, those details pointed away from a simple formatting problem and toward a lower-level write or controller issue.
+Two observations from the process made the failure pattern clear: "The disk showed only one 0B volume, with the rest of the disk listed as unallocated space," and "the volume creation and formatting steps all appeared to work perfectly" in GNOME Disks even though Windows still showed the same broken state afterward. Together, those details pointed away from a simple formatting problem and toward a lower-level write or controller issue.
 
 ### The Solution: An Elevated Environment
 
