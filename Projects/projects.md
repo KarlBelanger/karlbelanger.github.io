@@ -16,7 +16,7 @@ I recently had a cheap USB drive which was no longer recognized by Windows or Li
 ## Other projects
 Here are descriptions of a few of the things I've been working on.
 ## My experiences installing Debian and Red Hat-based distributions
-In order to familiarize myself with the different varieties of Linux, I have installed and configured a variety of Debian and Red Hat-based distributions including Ubuntu, Kali, Linux Lite, Fedora[...]
+In order to familiarize myself with the different varieties of Linux, I have installed and configured a variety of Debian and Red Hat-based distributions including Ubuntu, Kali, Linux Lite, Fedoraand CentOS.
 ## Setting up an SSH Bastian
             I wanted to have the ability to SSH into my home lab systems, so I set up an old laptop as an SSH Bastion to enable SSH into any of my three main nodes from my primary laptop when I'm [...]
 ## My Terraform and Ansible setup
