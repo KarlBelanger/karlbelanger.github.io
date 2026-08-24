@@ -13,9 +13,9 @@ plugins:
 # Navigation
 include:
   - index.md
-  - /projects/projects.md
-  - /projects/usb_drive_recovery.md
-  - /projects/home-lab.md
+  - projects/projects.md
+  - projects/usb_drive_recovery.md
+  - projects/home-lab.md
   - my-linux-accessibility-journey.md
 
 # Author info
