@@ -34,3 +34,8 @@ defaults:
       toc: true
       toc_label: "On this page"
       toc_icon: "list"
+# Minimal Mistakes: enable Mermaid
+mermaid: true
+head_scripts:
+  - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  - /assets/js/mermaid.js
