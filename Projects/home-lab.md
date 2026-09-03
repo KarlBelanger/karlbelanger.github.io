@@ -1,6 +1,7 @@
 ---
 title: "My home lab architecture as of August 2026"
 layout: single
+  - permalink: /projects/home-lab/
 toc: true
 toc_label: "Architecture sections"
 ---
