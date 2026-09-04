@@ -1,5 +1,6 @@
 ---
 title: "Nextcloud Deployment Project"
+auto_title: false
 layout: single
   - permalink: /projects/nextcloud-aio-project/
 toc: true
