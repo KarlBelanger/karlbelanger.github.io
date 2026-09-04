@@ -35,6 +35,7 @@ So far, phase one is complete, and phase two has been started with Netdata deplo
 ## Architecture diagram
 Here is the final architecture I am using:
 
+{% raw %}
 ```mermaid
 flowchart TD
     subgraph Cloudflare
@@ -52,6 +53,7 @@ flowchart TD
 
     CF --> TSF --> AP --> AIO
 ```
+{% endraw %}
 
 ## Why this architecture?
 I chose this architecture to take advantage of a few specific things:
