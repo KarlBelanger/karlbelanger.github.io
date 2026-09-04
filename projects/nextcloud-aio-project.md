@@ -4,7 +4,10 @@ layout: single
   - permalink: /projects/nextcloud-aio-project/
 toc: true
 toc_label: "project sections"
-syntax_highlighter: none
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+  parse_block_html: true
 ---
 
 # Running NextCloud AIO on my home lab
@@ -36,8 +39,7 @@ So far, phase one is complete, and phase two has been started with Netdata deplo
 ## Architecture diagram
 Here is the final architecture I am using:
 
-{% raw %}
-```mermaid
+<div class="mermaid">
 flowchart TD
     subgraph Cloudflare
         CF[Cloudflare DNS + Page Rules]
@@ -53,8 +55,7 @@ flowchart TD
     end
 
     CF --> TSF --> AP --> AIO
-```
-{% endraw %}
+</div>
 
 ## Why this architecture?
 I chose this architecture to take advantage of a few specific things:
