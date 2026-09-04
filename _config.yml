@@ -23,6 +23,11 @@ include:
   - projects/nextcloud-aio-project.md
   - my-linux-accessibility-journey.md
 
+collections:
+  Projects:
+    output: true
+    title: true
+
 # Author info
 author:
   name: "Karl Belanger"
