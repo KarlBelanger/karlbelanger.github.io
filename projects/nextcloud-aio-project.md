@@ -4,6 +4,7 @@ layout: single
   - permalink: /projects/nextcloud-aio-project/
 toc: true
 toc_label: "project sections"
+syntax_highlighter: none
 ---
 
 # Running NextCloud AIO on my home lab
