@@ -52,9 +52,6 @@
 </div>
 
 <style>
-  .masthead .nav-dropdown {
-    position: relative;
-  }
   .masthead .nav-dropdown > summary {
     cursor: pointer;
     list-style: none;
@@ -71,17 +68,15 @@
   }
   .masthead .nav-dropdown__menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
     min-width: 220px;
-    margin: 0.5em 0 0;
+    margin: 0;
     padding: 0.5em 0;
     list-style: none;
     background: #fff;
     border: 1px solid #eee;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    z-index: 20;
+    z-index: 9999;
   }
   .masthead .nav-dropdown[open] > .nav-dropdown__menu {
     display: block;
@@ -107,6 +102,28 @@
     document.querySelectorAll('.masthead .nav-dropdown[open]').forEach(function (details) {
       if (!details.contains(event.target)) {
         details.removeAttribute('open');
+      }
+    });
+  });
+
+  document.querySelectorAll('.masthead .nav-dropdown').forEach(function (details) {
+    var summary = details.querySelector('summary');
+    var menu = details.querySelector('.nav-dropdown__menu');
+
+    function position() {
+      var rect = summary.getBoundingClientRect();
+      menu.style.left = rect.left + 'px';
+      menu.style.top = rect.bottom + 'px';
+    }
+
+    details.addEventListener('toggle', function () {
+      if (details.open) {
+        position();
+        window.addEventListener('scroll', position, true);
+        window.addEventListener('resize', position);
+      } else {
+        window.removeEventListener('scroll', position, true);
+        window.removeEventListener('resize', position);
       }
     });
   });
