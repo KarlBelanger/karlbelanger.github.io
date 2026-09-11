@@ -1,6 +1,7 @@
 ---
 title: "Recovering a Dead USB Drive"
 layout: single
+permalink: /projects/usb-drive-recovery/
 toc: true
 toc_label: "Usb Drive Recovery"
 ---
