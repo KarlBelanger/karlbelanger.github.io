@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
   mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     flowchart: {
       subGraphTitleMargin: { top: 10, bottom: 10 }
     }
   });
+  mermaid.run();
 });
