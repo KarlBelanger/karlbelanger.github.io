@@ -53,7 +53,9 @@ flowchart TD
         AIO[Nextcloud AIO Master Container]
     end
 
-    CF --> TSF --> AP --> AIO
+    CF --> Tailscale
+    Tailscale --> Host
+    AP --> AIO
 </div>
 
 ## Why this architecture?
