@@ -24,15 +24,16 @@ When I initially set up my home lab, I quickly ran into a problem. I could SSH i
 Eventually, I discovered Tailscale and set it up as described above. It resolved nearly all of my issues with the SSH bastion.
 ### Access Model
 I access my lab through SSH on my Windows laptop, either directly or in a WSL environment. I then SSH into the desired machine using its friendly name, and Tailscale handles the authorization process for me.
-## Topology (Text Diagram)
-```text
-Internet
-  ↓
-Tailscale Mesh Network
-  ├── Ubuntu 26.04
-  ├── RHEL 10.2 
-  └── openSUSE Tumbleweed
-```
+## Topology
+<div class="mermaid">
+flowchart TD
+    accTitle: Home lab network topology
+    accDescr: Internet connects to a Tailscale mesh network, which connects three machines: Ubuntu 26.04, RHEL 10.2, and openSUSE Tumbleweed.
+    Internet[Internet] --> Mesh[Tailscale Mesh Network]
+    Mesh --> Ubuntu[Ubuntu 26.04]
+    Mesh --> RHEL[RHEL 10.2]
+    Mesh --> SUSE[openSUSE Tumbleweed]
+</div>
 ## Accessibility
 Accessibility is an important part of my workflow, from local control to remote access and even this website. Whenever possible, I run Orca inside a live USB before installing a distribution. I’ve seen several distributions where the installed tools have accessibility issues, some don’t have talking installers, and others don’t have accessibility enabled when the distribution is initially installed. All three distributions I chose have solid accessibility support and performed well out of the box. Another key part of my workflow is SSH. SSH works well with Windows screen readers such as NVDA and JAWS, and it allows me to control systems through the command line, troubleshoot issues, and even rebuild a completely broken GNOME environment, as I did when one of my machines was running Fedora 44. That experience will soon be another write-up, which I will link here once it’s posted. The accessibility of my GitHub site is also important. I use text-based diagrams like the one above so that I can produce them independently, and so they are readable for blind visitors without needing alternative text on a graphical diagram. I will continue to ensure that each new component and article on the site is accessible.
 ## Future Plans
