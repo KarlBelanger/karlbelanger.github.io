@@ -3,5 +3,12 @@ main:
     url: /
   - title: "Projects"
     url: /projects/
+    children:
+      - title: "Home Lab Architecture"
+        url: /projects/home-lab/
+      - title: "NextCloud AIO Deployment"
+        url: /projects/nextcloud-aio-project/
+      - title: "USB Drive Recovery"
+        url: /projects/usb-drive-recovery/
   - title: "Accessibility Journey"
     url: /accessibility-journey/
