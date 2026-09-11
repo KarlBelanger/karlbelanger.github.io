@@ -1,7 +1,7 @@
 ---
 title: "Nextcloud Deployment Project"
 layout: single
-  - permalink: /projects/nextcloud-aio-project/
+permalink: /projects/nextcloud-aio-project/
 toc: true
 toc_label: "project sections"
 kramdown:
@@ -10,7 +10,6 @@ kramdown:
   parse_block_html: true
 ---
 
-# Running NextCloud AIO on my home lab
 ## Overview
 This project aims to get a NextCloud AIO installation up and running on my home lab, then expand on this deployment in several phases. I chose NextCloud for this project because it is a real, multi‑component application rather than a simple tutorial or “hello world” example. Working with a system that includes storage, databases, web services, background workers, and multiple deployment options gives me more realistic experience than smaller, self‑contained projects typically provide. NextCloud also supports several deployment models such as AIO, Docker Compose, Kubernetes, and fully manual setups. This gives me the flexibility to start with a simple, guided installation and gradually transition to more complex and customizable architectures as the project develops.
 

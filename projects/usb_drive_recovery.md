@@ -5,8 +5,6 @@ toc: true
 toc_label: "Usb Drive Recovery"
 ---
 
-# Recovering a Dead USB Drive Using Linux Tools
-
 ## Technical Summary
 
 This write-up covers how I diagnosed and temporarily recovered a 16GB USB flash drive that Windows could see but could not repair. Windows showed confusing information: the drive looked healthy in some places, but it also showed a 0B volume and would not let me run the clean operation. I switched to Fedora SilverBlue so I could test whether the drive could still accept lower-level writes. The eventual fix required working directly with the block device from an elevated Linux environment so the partition and filesystem changes actually stuck. The process gave me a better understanding of controller-reported state, raw disk access, and why Windows and Linux behave differently during this kind of recovery.

@@ -9,7 +9,7 @@ toc: false
 ![Karl's picture](<Karl -1 trimmed beard.jpg>)
 ## Introduction
 Here is where I will be posting my Linux administration projects. This site is in its early days, but I will be expanding it a lot in the weeks to come. I got my CompTIA Linux Plus certification in January 2026 and my Amazon Web Certified Cloud Practitioner in July 2026, and have experience in managing and configuring Linux servers, automating tasks using shell scripting, and ensuring system security in my home lab. I will also share some thoughts on Linux accessibility and the challenges I've worked through as a Linux administrator.
-First off, here are some of my thoughts on my experiences with Linux accessibility. [](my-linux-accessibility-journey.md)
+First off, here are some of my thoughts on [my Linux accessibility journey](My-Linux-accessibility-journey.md).
 ## Projects
 ![Intel NUC from my home lab](<Linux Computer-1.jpeg>)
 

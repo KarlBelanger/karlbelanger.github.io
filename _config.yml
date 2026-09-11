@@ -14,15 +14,6 @@ highlighter: rouge
 plugins:
   - jekyll-include-cache
 
-# Navigation
-include:
-  - index.md
-  - projects/projects.md
-  - projects/usb_drive_recovery.md
-  - projects/home-lab.md
-  - projects/nextcloud-aio-project.md
-  - my-linux-accessibility-journey.md
-
 collections:
   Projects:
     output: true
@@ -31,7 +22,12 @@ collections:
 # Author info
 author:
   name: "Karl Belanger"
-  linkedin: "https://www.linkedin.com/in/karl-belanger-09761b21/"
+  avatar: "/Karl -1 trimmed beard.jpg"
+  bio: "Linux administrator building a home lab, writing about accessibility as a blind sysadmin."
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/karl-belanger-09761b21/"
 
 # Defaults for all Markdown pages
 defaults:
@@ -43,3 +39,4 @@ defaults:
       toc: true
       toc_label: "On this page"
       toc_icon: "list"
+      author_profile: true

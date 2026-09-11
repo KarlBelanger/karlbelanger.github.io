@@ -1,12 +1,11 @@
 ---
 title: "My Linux Accessibility Journey"
 layout: single
+permalink: /accessibility-journey/
 toc: true
 toc_label: "Topics"
 ---
 
-
-# My Linux accessibility journey
 As a blind technology user, I've always been interested in trying new accessibility tools. I've used screen readers on a variety of platforms, starting all the way back in Dos with a screen reader called VocalEyes. As my technology journey progressed, I've had several opportunities to try Linux accessibility features. Unfortunately, my experience on Linux has been decidedly mixed. While some distributions clearly thought through their experience for blind users, others have not fared as well. In this post, I'll share some of my experiences with Linux accessibility and how it has impacted my work as a Linux administrator.
 ## The install: will it talk or not?
 The first big question when starting any Linux installation is whether I can get it to talk during the install. Some distributions, like Ubuntu, allow you to just press a key combination when the installer starts. Others make you select a talking install from a menu which doesn't speak, which somewhat defeats the intent of having an accessible installation. Some don't have a talking installation at all, requiring sighted assistance to get the distribution installed. Whether the installer talks or not, once the main interface comes up, the next phase begins.
