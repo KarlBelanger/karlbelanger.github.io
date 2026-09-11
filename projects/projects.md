@@ -1,12 +1,11 @@
 ---
 title: "Projects"
 layout: single
+permalink: /projects/
 toc: true
 toc_label: "On this page"
 ---
 
-
-# Projects
 This is the primary page for all my Linux Administration projects. This page will grow over time as I complete more Linux admin projects.
 ## My home lab architecture
 All my projects are completed on my three Intel NUC home lab. All the details of my chosen setup and networking are on [My Home Lab Architecture.](./home-lab.md)
