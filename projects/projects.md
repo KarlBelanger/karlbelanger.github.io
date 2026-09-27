@@ -15,6 +15,11 @@ My most ambitious project so far: I have deployed Nextcloud AIO with Netdata for
 I recently had a cheap USB drive which was no longer recognized by Windows or Linux that I had been using for bootable ISOs. Here is how [I recovered the drive](./usb_drive_recovery.md)
 
 ## Other projects
-This section covers a few other projects that I've done. These will be written up fully in the near future.
+This section covers a few other projects that I've done.
+### Improving the accessibility of the online game Fundamental
+I enjoy playing an online incremental game called Fundamental. While it has some screen reader support, the experience left a lot to be desired. I decided to put Claude Code to the test and see if I could improve its accessibility. The final result is a pull request with a ton of improvements, which you can read about on my [Accessibility overhaul of Fundamental](./game-accessibility-overhaul.md) page.
+
+### Other Linux projects
+These will be written up fully in the near future.
 - Selecting a Virtual Machine platform: I wanted to continue experimenting with Linux distributions without having to wipe or dual-boot one of my home lab machines every time. After many issues with VmWare, I settled on Qemu+LibVirt+VirtManager.
 - Recovering from a catastrophic Gnome failure: Gnome catastrophically failed on one of my machines which was running Fedora 44 at the time. Recovering it involved multiple full app suite reinstalls, ssh issues, and package verification.
