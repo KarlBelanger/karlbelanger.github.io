@@ -10,5 +10,7 @@ main:
         url: /projects/nextcloud-aio-project/
       - title: "USB Drive Recovery"
         url: /projects/usb-drive-recovery/
+      - title: "Fundamental Accessibility Overhaul"
+        url: /projects/game-accessibility-overhaul/
   - title: "Accessibility Journey"
     url: /accessibility-journey/
