@@ -18,7 +18,7 @@ I recently had a cheap USB drive which was no longer recognized by Windows or Li
 This section covers a few other projects that I've done.
 
 ### The UEFI Access Project
-I have started the Uefi Accessibility Project,. This project aims to solve one of the biggest remaining accessibility in modern computing, the Unified Extensible Firmware Interface. We have developed a prototype tool which can change the boot order from within Windows. The prototype is in the final stages, and a full writeup and a link to the GitHub repository will be coming shortly.
+I have started the UEFI Accessibility Project. This project aims to solve one of the biggest remaining accessibility barriers in modern computing, the Unified Extensible Firmware Interface. We have developed a prototype tool which can change the boot order from within Windows. The initial prototype is released under the Mozilla Public License v2.0. Read about the [UEFI-Access project](./uefi-access.md), and access the [Project Repository](https://github.com/KarlBelanger/UEFI-Access) (private).
 ### Improving the accessibility of the online game Fundamental
 I enjoy playing an online incremental game called Fundamental. While it has some screen reader support, the experience left a lot to be desired. I decided to put Claude Code to the test and see if I could improve its accessibility. The final result is a pull request with a ton of improvements, which you can read about on my [Accessibility overhaul of Fundamental](./game-accessibility-overhaul.md) page.
 

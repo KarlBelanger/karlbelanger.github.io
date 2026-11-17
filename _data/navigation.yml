@@ -12,5 +12,7 @@ main:
         url: /projects/usb-drive-recovery/
       - title: "Fundamental Accessibility Overhaul"
         url: /projects/game-accessibility-overhaul/
+      - title: "UEFI-Access Project"
+        url: /projects/uefi-access/
   - title: "Accessibility Journey"
     url: /accessibility-journey/
